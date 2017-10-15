@@ -9,15 +9,6 @@ namespace DataAnalyticsSignalR.Hubs
     public class MessageHub : Hub
     {
         private static IHubContext hubContext = GlobalHost.ConnectionManager.GetHubContext<MessageHub>();
-        public void Hello()
-        {
-            Clients.All.hello();
-        }
-
-        public static void SayHello()
-        {
-            hubContext.Clients.All.hello();
-        }
 
         public static void PushMessage(string message)
         {

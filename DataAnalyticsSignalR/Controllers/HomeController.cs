@@ -10,7 +10,6 @@ namespace DataAnalyticsSignalR.Controllers
     {
         public ActionResult Index()
         {
-
             return View();
         }
     }

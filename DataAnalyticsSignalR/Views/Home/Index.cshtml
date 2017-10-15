@@ -12,12 +12,19 @@
     <script src="~/Scripts/jquery-2.2.0.min.js"></script>
     <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
     <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/scripts/moment.min.js"></script>
     <script src="~/signalr/hubs"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="~/Scripts/app.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart', 'line', 'gauge'] });
+        google.charts.setOnLoadCallback(init);
+    </script>
 </head>
 <body>
     <div ng-controller="AppController">
-        <div id="messageDiv"></div>
+        <div id="delayGraph">
+        </div>
     </div>
 </body>
 </html>

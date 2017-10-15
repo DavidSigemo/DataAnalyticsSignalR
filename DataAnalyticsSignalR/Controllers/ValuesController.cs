@@ -1,5 +1,6 @@
 ﻿using DataAnalyticsSignalR.Hubs;
 using DataAnalyticsSignalR.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,8 @@ namespace DataAnalyticsSignalR.Controllers
         // POST api/values
         public void Post([FromBody]Message Message)
         {
-            MessageHub.PushMessage(Message.MessageJSON);
+            var jsonMessage = JsonConvert.SerializeObject(Message);
+            MessageHub.PushMessage(jsonMessage);
         }
     }
 }
